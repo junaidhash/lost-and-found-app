@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Lost and Found new</string>
+    <!-- Labels -->
+    <string name="phone_label">Phone:</string>
+    <string name="date_label">Date:</string>
+    <string name="location_label">Location:</string>
+    <string name="remove_item">Remove Item</string>
+
+    <!-- Sample data for preview -->
+    <string name="sample_name">Lost Wallet</string>
+    <string name="sample_post_type">Lost</string>
+    <string name="sample_phone">+1 234 567 890</string>
+    <string name="sample_date">2024-03-20</string>
+    <string name="sample_location">Central Park, New York</string>
+    <string name="sample_description">Black leather wallet with credit cards and ID</string>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@color/white">
+
+    <!-- Create New Advert Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCreateAdvert"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Create New Advert"
+        android:textSize="16sp"
+        android:paddingVertical="16dp"
+        app:icon="@drawable/ic_add"
+    app:iconTint="@color/purple_500"
+    app:strokeColor="@color/purple_500"
+    app:strokeWidth="1dp"
+    app:cornerRadius="8dp"
+    app:rippleColor="@color/purple_200"
+    android:textColor="@color/purple_500"/>
+
+    <!-- Show All Items Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnShowItems"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show All Items"
+        android:textSize="16sp"
+        android:paddingVertical="16dp"
+        app:icon="@drawable/ic_list"
+    app:iconTint="@color/white"
+    app:cornerRadius="8dp"
+    app:rippleColor="@color/purple_700"
+    android:backgroundTint="@color/purple_500"
+    android:textColor="@color/white"
+    android:elevation="2dp"/>
+
+</LinearLayout>
