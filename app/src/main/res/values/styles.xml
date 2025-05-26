@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Add Material Components bridge theme for Places compatibility -->
+    <style name="Theme.Places.Autocomplete" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="colorPrimary">@color/purple_700</item>
+        <item name="colorPrimaryVariant">@color/purple_900</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <!-- Base application theme -->
+    <style name="Theme.AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/gray_700</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Add these for Places Autocomplete compatibility -->
+        <item name="materialButtonStyle">@style/Widget.AppTheme.Button</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.AppTheme.Body1</item>
+    </style>
+
     <!-- Detail page styles -->
     <style name="DetailItemTitle" parent="TextAppearance.MaterialComponents.Headline6">
         <item name="android:layout_width">match_parent</item>
@@ -32,5 +52,16 @@
         <item name="android:textSize">16sp</item>
         <item name="android:lineSpacingMultiplier">1.2</item>
         <item name="android:textColor">@color/gray_700</item>
+    </style>
+
+    <!-- Add these Material Components styles -->
+    <style name="Widget.AppTheme.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/purple_700</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
     </style>
 </resources>

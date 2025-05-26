@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    // Remove compose plugin if not using Jetpack Compose
 }
 
 android {
@@ -35,33 +34,28 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
-        // Remove compose if using XML layouts
-        viewBinding = true  // Add for view binding
+        viewBinding = true
     }
 }
 
 dependencies {
-    // Core Android dependencies
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
-
-    // Material Design
     implementation(libs.material)
-
-    // RecyclerView
     implementation(libs.androidx.recyclerview)
-
-    // SQLite
     implementation(libs.androidx.sqlite)
-
-    // Lifecycle components
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.appcompat)
-
-    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.gridlayout)
+
+    // Geo dependencies
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation("com.google.android.gms:play-services-location:21.2.0")
+    implementation("com.google.android.libraries.places:places:3.4.0")
+    implementation("androidx.activity:activity-ktx:1.8.2")
+    implementation("com.google.android.gms:play-services-location:21.2.0")
 }

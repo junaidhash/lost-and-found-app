@@ -4,29 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:padding="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
         <!-- Item Details Card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="4dp"
-            app:cardCornerRadius="8dp"
-            app:strokeColor="@color/purple_200"
-            app:strokeWidth="1dp"
-            android:layout_marginBottom="24dp">
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:strokeColor="@color/purple_300"
+            app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="20dp">
 
                 <!-- Name -->
                 <TextView
@@ -34,92 +35,62 @@
                     style="@style/DetailItemTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:text="@string/sample_name"/>
+                    tools:text="@string/sample_name" />
 
-                <!-- Post Type Chip (Fixed for Material 2) -->
+                <!-- Post Type Chip -->
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipPostType"
-                    style="@style/Widget.MaterialComponents.Chip.Entry"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="12dp"
                     android:textColor="@color/purple_800"
-                    app:chipStrokeColor="@color/purple_500"
-                    app:chipBackgroundColor="@color/purple_100"
-                    app:chipStrokeWidth="1dp"
-                    app:chipCornerRadius="8dp"
-                    tools:text="@string/sample_post_type"/>
+                    app:chipBackgroundColor="@color/purple_50"
+                    app:chipStrokeColor="@color/purple_300"
+                    app:chipStrokeWidth="10dp"
+                    tools:text="@string/sample_post_type" />
 
                 <!-- Divider -->
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/purple_100"
-                    android:layout_marginVertical="16dp"/>
+                    android:layout_marginVertical="20dp"
+                    android:background="@color/purple_100" />
 
                 <!-- Details Grid -->
                 <androidx.gridlayout.widget.GridLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:columnCount="2"
-                    android:rowCount="3">
+                    android:columnOrderPreserved="false"
+                    android:useDefaultMargins="true">
 
-                    <!-- Phone Label -->
                     <TextView
                         style="@style/DetailLabel"
-                        android:text="@string/phone_label"
-                        android:layout_row="0"
-                        android:layout_column="0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:text="@string/phone_label" />
 
-                    <!-- Phone Value -->
                     <TextView
                         android:id="@+id/tvPhone"
                         style="@style/DetailValue"
-                        tools:text="@string/sample_phone"
-                        android:layout_row="0"
-                        android:layout_column="1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        tools:text="@string/sample_phone" />
 
-                    <!-- Date Label -->
                     <TextView
                         style="@style/DetailLabel"
-                        android:text="@string/date_label"
-                        android:layout_row="1"
-                        android:layout_column="0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:text="@string/date_label" />
 
-                    <!-- Date Value -->
                     <TextView
                         android:id="@+id/tvDate"
                         style="@style/DetailValue"
-                        tools:text="@string/sample_date"
-                        android:layout_row="1"
-                        android:layout_column="1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        tools:text="@string/sample_date" />
 
-                    <!-- Location Label -->
                     <TextView
                         style="@style/DetailLabel"
-                        android:text="@string/location_label"
-                        android:layout_row="2"
-                        android:layout_column="0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:text="@string/location_label" />
 
-                    <!-- Location Value -->
                     <TextView
                         android:id="@+id/tvLocation"
                         style="@style/DetailValue"
-                        tools:text="@string/sample_location"
-                        android:layout_row="2"
-                        android:layout_column="1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        tools:text="@string/sample_location" />
 
                 </androidx.gridlayout.widget.GridLayout>
 
@@ -129,34 +100,27 @@
                     style="@style/DetailDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    tools:text="@string/sample_description"/>
+                    android:layout_marginTop="20dp"
+                    tools:text="@string/sample_description" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <!-- Remove Button -->
-        <LinearLayout
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRemove"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnRemove"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/remove_item"
-                android:textColor="@color/white"
-                app:icon="@drawable/ic_delete"
-                app:iconTint="@color/white"
-                app:cornerRadius="8dp"
-                android:backgroundTint="@color/red_700"
-                app:strokeColor="@color/red_900"
-                app:strokeWidth="1dp"
-                android:elevation="4dp"
-                android:paddingVertical="16dp"/>
-
-        </LinearLayout>
+            android:text="@string/remove_item"
+            android:icon="@drawable/ic_delete"
+            android:iconTint="@color/white"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/red_700"
+            app:cornerRadius="12dp"
+            app:iconPadding="12dp"
+            app:strokeColor="@color/red_900"
+            app:strokeWidth="1dp"
+            android:elevation="6dp"
+            android:paddingVertical="14dp" />
     </LinearLayout>
 </ScrollView>

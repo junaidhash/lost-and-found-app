@@ -10,7 +10,14 @@
     <string name="sample_name">Lost Wallet</string>
     <string name="sample_post_type">Lost</string>
     <string name="sample_phone">+1 234 567 890</string>
-    <string name="sample_date">2024-03-20</string>
+    <string name="sample_date">yyyy-mm-dd</string>
     <string name="sample_location">Central Park, New York</string>
     <string name="sample_description">Black leather wallet with credit cards and ID</string>
+
+    <string name="current_location">Current Location</string>
+    <string name="location_permission_required">Location permission required</string>
+    <string name="location_unavailable">Unable to get location</string>
+    <string name="all_fields_required">All fields are required!</string>
+    <string name="invalid_location">Please select a valid location</string>
+    <string name="item_saved">Saved!</string>
 </resources>

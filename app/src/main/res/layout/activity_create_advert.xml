@@ -116,6 +116,30 @@
                 android:inputType="textPostalAddress"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Add this after location TextInputLayout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/btnAutoComplete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Search Places"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/btnCurrentLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Use Current Location"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
         <!-- Save Button -->
         <Button
             android:id="@+id/btnSave"

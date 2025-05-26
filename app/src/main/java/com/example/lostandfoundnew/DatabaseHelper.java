@@ -10,9 +10,10 @@ import java.util.ArrayList;
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "LostFound.db";
     private static final String TABLE_ITEMS = "items";
+    private static final int DATABASE_VERSION = 3;
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, 2);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
@@ -24,7 +25,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "phone TEXT," +
                 "description TEXT," +
                 "date TEXT," +
-                "location TEXT)");
+                "location TEXT," +
+                "latitude REAL," +
+                "longitude REAL)");
     }
 
     @Override
@@ -33,9 +36,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // Unified insert method with new fields
     public boolean insertItem(String postType, String name, String phone,
-                              String description, String date, String location) {
+                              String description, String date, String location,
+                              double latitude, double longitude) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("postType", postType);
@@ -44,6 +47,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("description", description);
         values.put("date", date);
         values.put("location", location);
+        values.put("latitude", latitude);
+        values.put("longitude", longitude);
         return db.insert(TABLE_ITEMS, null, values) != -1;
     }
 
@@ -55,13 +60,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 items.add(new Item(
-                        cursor.getInt(0),    // id
-                        cursor.getString(1), // postType
-                        cursor.getString(2), // name
-                        cursor.getString(3), // phone
-                        cursor.getString(4), // description
-                        cursor.getString(5), // date
-                        cursor.getString(6)  // location
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getString(6),
+                        cursor.getDouble(7),
+                        cursor.getDouble(8)
                 ));
             } while (cursor.moveToNext());
         }
